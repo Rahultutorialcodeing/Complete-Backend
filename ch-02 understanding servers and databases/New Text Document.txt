@@ -1,0 +1,47 @@
+1) Previous class revice
+2) Userstand about computer
+    1) kya computer by default server hota hai 
+    => nhi computer by default web server nhi hota hai kyu ki wo default me http request ho handle krne me saksham nhi hota. Agar us computer ko agar http request ho handle yani web server banana hai to uso kash configration krna prta hai
+    jaise us computer me nginx , nodejs, appache, tom cat ko install krna prega.
+    => koe v computer agar web server banawoge to by default ek address alert ho jata hai jisko IP address v bola jata hai (ex:- 127.0.0.1)
+    => koe v web server http request ke tor pe IP address hi leta jaise ki coding.ott serch kiye to server ke pass eska IP address jata hai but apko yadd ke liye domain name de diya jata hai.
+
+3) what is db
+    => install db into CPU
+    => type of db
+    => which type of text store inside db 
+
+4) Undersatnd about scalling
+   => 2 types of scalling 
+   1) horizontal scalling
+   2) vertical scalling
+
+   * horizontal scalling
+   => man lo claud infra ho or apka av jo website run ho rha hai us CPU ka ram 1 gb hai or HD 200 but website or pawor chhaiye mtlb user jyada aane lge to hm kya krenge to alag nya ek or CPU create kr lenge or chhiaye to fir se alag nya CPU create kr lenge es Process ko horizontal scalling kahte hai 
+
+   ex:- youtube pe man lo live satrem ho rha hai to usko anginat matra me like comment aata hai to yt kya krta hai ki es smy horizontal scalling krta hai nya nya CPU ko created krte jata hai jaise ki 10000 CPU create huwa to user automatic destribut ho jate hai sare CPU pe 
+
+   daily sacling ke liye horizontal scalling best hota hai 
+
+   * vertical scalling
+   => ek CPU ko hi uska jarurat ke according RAM HD ko increase kiya jata hai n nhi nya create krenge usko vertical scalling kahte hai
+
+  kv  kv sal me ya 6 month me even per month me  offer lana hota hai to jaise flipkat to wo vertical sacling krta hai ek hi CPU ko hi ram hd increase krta hai
+
+
+5) Userstand server and serveless
+   * server 
+   => server ek CPU hai jisme client khud se deside krta hai ki hmko website ke liye kitna ram , hd, kon ka operating system chhiaye ye client khud deside krta hai 
+   => jb client server leta hai to usko hourly paise dene prte hai jaise ki (24*7) ka paise dene prte hai 
+
+   * serverless 
+   => ye Cloud apko website ke according sara configration kr deta hai 
+   => or esme request ke paise dene prte hai n ki hourly jitna request utna paise 
+
+   server and serverless ex:- man lo ek client jo demo.org ek nya website hai to usme user limited time pe aate hai to client usko serveless pe dalena n taki paisa bachega uska
+
+6) jb aapa sacling kroge n to db ko alag server pe rakhte hai av app kya krte hoge ek server loge usme ki code or db dono rakhte hoge but yesha saclling ke smy problem hoga to hm code ke liye alag Server or db ke liye alag server lete hai 
+same db ke liye v server or serverless waal formula lagu hota hai.
+
+jaise jb jb db se deta read , delet ,update hota to usmy serverless se paisa lagega but server se hourly lagega bina db use ke v.
+  

@@ -1,0 +1,132 @@
+first we add data like this
+ {
+    "title": "Wireless Mouse",
+    "price": 699,
+    "categories": ["electronics", "computer accessories"],
+    "tags": ["wireless", "mouse", "usb"],
+    "colors": ["black", "grey"],
+    "ratings": [4, 5, 5, 4],
+    "createdAt": { "$date": "2025-01-01T10:00:00.000Z" }
+  },
+
+  1) $unwind
+   - db.products4.aggregate([
+    {
+        $unwind:"$tags"
+    }
+   ])
+
+
+   - ye array ka har element ke liye seprate document tyar kr ke de dega
+   - jb app seo ke liye coding kroge n tb ye jruri hota hai
+
+   2) $group
+
+    - ye bhut hi important stage hai aggregate me 
+    - man lo 2 collection hai 
+    -------------------- USER COLLECTION --------------------
+
+M - 123
+N - Rahul
+E - hello
+
+--------------------------------------------------------
+
+
+-------------------- PAYMENT COLLECTION -----------------
+
+M - 123
+N - Rahul
+E - hello
+PAYMENT-1200
+
+--------------------------------------------------------
+
+ - eska nukshan ye hai ki same 3 data dono collection m hai
+ esse hamra db ka storage full ho rha hai 
+ or deta decentrlise hai software developmnet me ek term aata hai 
+ azile methology jo khta hai ki deta ko hamesha centralize rakho
+ ye problem ko $group solve krta hai
+
+ - centralize method se deta kaise dikhate hai wo dekhna products4 collection se hm category kewal lenge jo menu ke form me dikhega 
+
+ mtlb ye huwa ki ek collection se products or menu dono ban jayega aalag se 2 collection nhi bana prega
+
+ -  db.products2.find({},{
+    category:1,_id:0
+ })
+ 
+ - yeshe krenge to v deta aayega but esme dikat ye hai n ki man lo {{category: electronics},category: electronics} bhut sare hai to yeshe fronted pe sara aayega to frontend developer kya krega ki duplicate data ko loop chalake hata dega jisse ek problem hogi apka computer me compute pawor jayda use hoga 
+ mai batata hu ki kb kb jayda machin ka compute pawor use hota hai 
+ - jb app nested pe nested pe nested if else , loop , server pe image comprase krna , or jyada data pe loop chalna tb jayda compute pawor use hota hai
+
+ - final solve this problem
+
+
+ - db.products2.aggregate([
+    {
+        $group:{
+            _id:"$category"
+        }
+    }
+
+ ])
+
+ - db.products2.aggregate([
+    {
+        $group:{
+            _id:"$category",
+            totalProducts:{$sum:1}
+        }
+    },
+   
+
+ ])
+
+- db.products2.aggregate([
+    {
+        $group:{
+            _id:"$category",
+            totalProducts:{$sum:1},
+            totalStoks:{$sum:{$multiply:['$price','$stock']}}
+        }
+    },
+   
+
+ ])
+
+ // man lo Footwear ka totalProducts 2 hai to sbbse phle dono ka stock or price multipley hoga 
+ 1) Footwear 
+   [{
+    stock :60,
+    price:3599
+   },
+     {
+    stock :75,
+    price:2899
+   }]
+
+   // last me dono multipley hone add ho jayenge 
+
+- db.products2.aggregate([
+    {
+        $group:{
+            _id:"$category",
+            totalProducts:{$sum:1},
+            totalStoks:{$sum:{$multiply:['$price','$stock']}}
+        }
+    },
+    {
+        $addFields:{
+            category:"$_id"
+            
+        }
+        },
+        {
+            $project:{
+                _id:0
+            }
+        }
+])
+
+

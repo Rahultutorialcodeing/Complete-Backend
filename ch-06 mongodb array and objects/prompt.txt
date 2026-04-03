@@ -1,0 +1,14 @@
+// Prompt
+generate product.json with colors array give me atleast 10 product must add createdAt with mongodb $date 
+
+Array operators and methods
+$slice
+$in
+$all
+$push || $addToSet
+$each, $position, $sort
+$pop | $pull
+-----------------------------------
+
+Array of objects
+$elemMatch

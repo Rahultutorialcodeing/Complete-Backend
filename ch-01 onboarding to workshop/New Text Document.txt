@@ -1,0 +1,51 @@
+1) welcom to workshop
+2) product vs project
+   - product we learn in workshop vs project will learn in ordenary courses
+   
+   
+     * Project
+     => ye code likha to animation ban gya ye likha to  crud opr ban gya ye sb project me ginate hai.
+     => Project kaha run hota hai wo apke PC  pe run hota hai.
+    =>PC->RAM hoga, HD (Hard Disk) hoga , Proceesor hoga
+
+    * Product
+    => Production meanly users ke dyan me rakh ke banate ho
+    => man lo esme av kam ho rha hai fir 5 sal ke tk esko chor denge es product pe kam krne ke liye to kya 5 sal ke bad fir kam satrt kr payoge  
+
+    Product banate wokt hmko 2 approch ko dyan me rakh ke kam krte hai 
+    1) Robust
+    2) Scalablity
+       * Robust
+       =>  kya nya developer us khi se kam utha kr kam kr payega 
+       => kya jo code kr rhe hai av wo lambe smy tk chal payega
+       => jb app apne code ko well trike se mentain kr ke rkhte ho n taki team ko scale krne me koe dikat n ho , code etna well arrange ho ki kitna v jatil ho jaye code ko test krna manage krna essay ho to esko Robust bola jata hai 
+
+       * Scalablity
+       => kya mera product ek sath 1000 of request ko handle kr paa rha hai 
+
+3) Server
+=> Server ek machine (computer) hoti hai jo request receive karti hai aur response deti hai.
+ * 2 types of Server
+ 1) shared server 
+ 2) claud server
+
+ * shared server
+ => multiple website ka source code ek hi computer pe rkha gya ho usko shared server khte hai
+ * now goes inside to shared server
+ => jb hmlog kisi website ka code kisi computer (machin) pe rakh du to usko hmlog bolenge ki webiste ko host kiya ya web hosting kiya 
+ => shared server me apko root access (admin access) nhi milega kyu ki jo ek operating system ek webiste use kr rha hai jaise windows to sare ko windows hi operating system use krna hoga koe chnage nhi kr skta hai
+
+ shared server goodaddy,hosting,big rocks ye sb provide krte hai
+
+ * Cloud server
+ => jiske pass apna deta center ho usko Cloud server bolenge.
+ => deta center use khte hai jiske hamra deta ko store kr ke rakha jata hai or deta center ke andar anginat HD (hard Disk )
+ka collection hota hai.
+=> claud server edge location pe kam krte hai 
+=> edge location ka mltb app jaise aws use kr rhe ho to apko hm jis jagah pe hai waha ka data center se deta delever hoga.
+
+claud server AWS , Azure, Google Cloud etc
+
+=> claud server ke pass sare feature hote jaise web hosting , host reatime developer apne api test kr skte hai (team observ), Robust, code securety etc banae ka feature deta hai claud server  smje hosting v khta hai ki hm claud server denge apko hm hosting ke claud me app shirf web hosting kr skte ho esliye hme claud server ke liye AWS , Azure jaise platform ko apnana chhiaye kyu ki ye sb claud ka sare feature dete hai.
+    
+

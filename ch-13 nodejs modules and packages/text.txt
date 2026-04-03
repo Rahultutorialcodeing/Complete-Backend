@@ -1,0 +1,30 @@
+modul | package | dependency | library
+ye sb ek hi chij hai
+
+modul 3 types ke hote hai
+1) built-in (jo nodejs me already hai)
+2) user-defined (jo app bnawoge apne kam ke acording)
+3) third party modul (jo internet se dawolod krte hai)
+
+// first we study on user-defined modul
+// common js indicate
+ module.exports // export krne ke liye
+ require // import krne ke liye
+
+// ecma script indicate 
+export ya export default  // export krne ke liye
+import // import krne ke liye
+
+// now third party module
+// dekho third party modul hmlog internet ke throw dawolod krte hai ye sb exprience developer ke dwara banya hota hai
+
+ex:- hme file dawload krne ka code likhna hai to app fresher hoge to nhi likh payoge code uske liye app internet se koe library dawload kronge 
+jisme jibrary ka name diya rhega (dawloadFile(''..helo.mp3))
+
+
+bina NPM ke koe v module internet se nhi dawload kr payonge
+
+jitne v developer hote hai jo midule banate hai to sare npm ke website pe apna code ko host krte hai
+npm i moment
+npm i nodemon -g
+// moment wap institute

@@ -1,0 +1,1 @@
+node ko production me run krne ke liye node js or iginx ko install krna prta hai

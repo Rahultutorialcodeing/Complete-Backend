@@ -1,0 +1,10 @@
+Aggregate
+	$match
+	$project
+	$limit
+	$skip
+	$count
+	$sample
+	$addFields
+	$cond
+	$switch

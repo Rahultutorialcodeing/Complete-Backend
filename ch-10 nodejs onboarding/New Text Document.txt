@@ -1,0 +1,50 @@
+- ajj se apka node js start hoga node js sikhne ke liye javascript ka knowledge hona chhiaye
+
+- kuch normal fundamental ke bare me bad lete hai jo node js tk phuchne ke help kregaapp web
+
+- ek website ko chalane ke liye atlist 2 computers ke jarurat prta hai 
+
+- man lo app demo.com kr ke website bnaye ho to es website ko code ko yesha computer pe rkhoge jo 24*7 run krta ho , engeenier ke dekh rekh me ho , hight speed connect jiske pass hoga esko bola jata hai web server to ye phla computer ho gya hamara jaha pe hmlog website ka code ko rkhte hai , esko website host krna v bolte hai
+
+- or ek computer jo client ke liye hoga jo webiste ko access kr rha hoga.
+- agar apke website pe 10000 ka traffice hai mtlb 10000 users ne apka website khola
+- or 5000 cuncorent traffice hai mtlb per second hmare website pe 5000 users aa rhe hai.
+- jo users ka computer ke usko bolenge client or jaha pe webiste ka code hai usko bolenge server.
+
+ * agar mereko ek website run krna hai to hme 2 chije chhiaye ek client or ek server
+ - client request krta hai server ke pass or server response krta hai client ko 
+
+ - man lo client ke request krne me 1 second ka time gya to or server se response aane me 1 second ka time lga to usko hmlog bolenge 2 second ka latency lga website ko khulne me
+
+- web dev ka rul hai ki agar apka website product sell krta hai to us webiste ka letency 3 se 5 second ke bich ka hona chiaye , ye jitna kam higa wotna website achha rhega
+
+- about client and server side language 
+- satatic vs dyanmic webiste
+- which language is best for which type of aplication?
+ 1) Node js
+  -> network centric type ke application ke liye best hai 
+  -> vidio streaming application,
+  -> chat application,
+  -> vidio calling aplication
+  -> real time deta wale application ko network centric aplication bola jata hai 
+
+  2) PHP 
+   -> e-commerce
+   -> cloud telephony
+
+  3) Python
+   -> ML,
+   -> AI
+   -> Data Science
+
+  4) .net , java
+  -> transational security
+  -> phone pe
+  -> stocks
+
+  - yehse bola jata hai ki .net or java bhut secure hai but mai apko bta du ki buy default koe language secure nhi hota hai language ko secure banane ke liye developer pe depend krta hai developer anpna exprience se lang' ko secure banata hai
+
+- dekho java or .net ko secure kyu kaha jata hai kyu ki java ka code bhut complex tha jb jawa aaya tha ab n java ke liye kuch labrary, framwork aaye to jaha aashan type hone lga to yahi complex code ko chupnane ke liye java or .net walne ne hype bnaya tha ki java ka server bhut secure hote hai kyu ki usme jayda code likhna prta hai
+
+
+   

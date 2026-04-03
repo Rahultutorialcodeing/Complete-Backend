@@ -1,0 +1,18 @@
+Insert a single document into the students collection with fields: name, age, grade, and city.
+
+Insert multiple documents into the books collection with fields: title, author, price, and category. Add at least 4 books.
+
+Retrieve all documents from the students collection.
+
+Retrieve all documents from the books collection but only return the title and author.
+
+Retrieve a single book from the books collection where the title is "JavaScript Basics", but only return the title and price.
+
+Retrieve all documents from the students collection but return only name and age.
+
+Retrieve the first document from the books collection where the category is "Technology" and return only title and author.
+
+Retrieve only 3 documents from the students collection using limit().
+
+Retrieve only 2 books from the books collection using limit().
+

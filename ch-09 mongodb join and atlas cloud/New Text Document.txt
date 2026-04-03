@@ -1,0 +1,42 @@
+- good moring student enterprize ke andar ek or term hai databse ka useko janan hai es vidio ke andar or koe v databse ka software use kro us software ko 2 jagah pe app dal skte hai 
+- ek us CPU me jaha apka code hai
+- or ek wo ho gya ek seprate CPU hi hoga kya databse ke software ke liye
+
+- bra player krta hai 2 wala jiske pass bhut users hote hai 
+- hai ek db ka colleaction me 1g ka data store kt skte hai
+
+--- Join Operation ---
+
+ - give me user.json data in monodb
+ - generate payments2.json using same users details
+
+ - db.payments2.aggregate([
+     {
+        $lookup:{
+            from:'users',
+            localField:'userId',
+            foreignField:'_id',
+            as:'userData'
+        }
+     }
+
+ ])
+
+
+- db.payments2.aggregate([
+  {
+    $lookup: {
+      from: "users",
+      localField: "userId",
+      foreignField: "_id",
+      as: "userData"
+    }
+  },
+  {
+    $unwind: {
+      path: "$userData",
+      preserveNullAndEmptyArrays: true
+    }
+  }
+])
+

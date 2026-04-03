@@ -1,0 +1,312 @@
+// EnterPrise level mongoDB
+
+- ab tk mongodb ka jo operation appne likha hai wo mind range or samller range ke application me use hoga 
+- monstely 95% ka kam usse ho jayega
+- or jo bacha 5% ka kam wo EnterPrise lavel ke application me use hota hai
+
+- Aggregate
+  - hmlog Aggregate ko EnterPrise lavel ke application me use krte hai Aggregate hme help krta hai complex data me se deta nikalana
+  - Aggregate ke multiple stage hote jo start $ se hote hai or har stage alag alag curly bracket ke sath likhte hai
+
+  - db.courses.aggregate([])  // sara data dega like find() jaisa
+
+ 1) $match // ye shirf deta match ke ke res deta hai
+  - db.courses.aggregate([
+    {
+        $match:{title:"react js"}
+    }
+  ])
+
+ 2) $project // ye projection deta hai 
+    - db.courses.aggregate([
+    {
+        $match:{title:"react js"}
+    },
+    {
+        $project:{
+            title:1,
+            _id:0,
+            price:1
+        }
+    }
+  ])
+
+ 3) $limit 
+ - db.courses.aggregate([
+    {
+        $project:{
+            title:1,
+            _id:0,
+            price:1
+        }
+    },
+    {
+        $limit:2
+    }
+  ])
+
+  4) $skip 
+    - db.courses.aggregate([
+    {
+        $project:{
+            title:1,
+            _id:0,
+            price:1
+        }
+    },
+
+    {
+        $skip:2
+    },
+    {
+        $limit:2
+    },
+  ])
+
+  // Advace
+
+  - db.courses.aggregate([
+    {
+        $match:{
+            price: {$gte:300, $lte:1000}
+        }
+    }
+  ])
+  - db.courses.aggregate([
+     {
+        $match:{
+            price: {$gte:300, $lte:1000}
+        }
+    },
+    {
+        $sort:{price:1}
+    }
+  ])
+  - db.courses.aggregate([
+     {
+        $match:{
+            price: {$gte:300, $lte:1000}
+        }
+    },
+    {
+        $sort:{price:1}
+    },
+    {
+        $project:{
+            title:1,
+            price:1
+        }
+    }
+  ])
+  - db.courses.aggregate([
+     {
+        $match:{
+            price: {$gte:300, $lte:1000}
+        }
+    },
+    {
+        $sort:{price:1}
+    },
+    {
+        $project:{
+            title:1,
+            amout:"$price"
+        }
+    }
+  ])
+
+  //ye price ka value amount me dal deta hai 
+
+   - db.courses.aggregate([
+     {
+        $match:{
+            price: {$gte:300, $lte:1000}
+        }
+    },
+    {
+        $sort:{price:1}
+    },
+    {
+        $project:{
+            title:1,
+            amout:"rahul"
+        }
+    }
+  ])
+// statice deta dalna hai to string kewal dal skte ho number dalne ke liye agge pdenge
+
+*) $sample // har bar random deta milega response me 
+
+  - db.courses.aggregate([
+    {
+        $sample:{size:2}
+    }
+  ])
+
+*) $addFields
+
+- db.courses.aggregate([
+    {
+        $addFields:{
+            tax:12,
+            gst:18
+        }
+    }
+])
+
+// kisi other fled ka deta anya filed me chhiaye to project use krnege 
+// or aagr nya filed create krna hai to addFields use krenge
+// or ye sb db me nhya deta created nhi krta hai dyna rkhna 
+
+
+- now we gerarte data 
+{
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "class": "10A",
+    "roll": 1,
+    "marks": [12, 15, 19, 96]
+  },
+
+- db.students.aggregate([
+    {
+        $addFields:{
+            totalMarks:{$sum:"$marks"}
+        }
+    }
+])
+//   "marks": [12, 15, 19, 96] add kr dega 
+
+- db.students.aggregate([
+     {
+        $addFields:{
+            totalMarks:{$sum:"$marks"}
+        }
+    },
+    {
+        $project:{
+            marks:0, // marks nhi aayega
+        }
+    }
+])
+
+- db.students.aggregate([
+    {
+        $addFields:{
+            totalMarks:{$sum:"$marks"}
+        }
+    },
+    {
+        $addFields:{
+             noOfSubjects:{$size:"$marks"}
+        }
+    }
+])
+
+- db.students.aggregate([
+    {
+        $addFields:{
+            totalMarks:{$sum:"$marks"},
+             noOfSubjects:{$size:"$marks"}
+        }
+    },
+    {
+        $addFields:{
+             precentage:{$divide:["$totalMarks","$noOfSubjects"]}
+        }
+    },
+    {
+        $project:{
+            marks:0,
+            noOfSubjects:0
+        }
+    }
+])
+
+/precentage=totalMarks/noOfSubjects
+// dekho jo v nya field created hua hai usi stage me n usko read nhi kr skte hai smje na babu
+
+
+- db.students.aggregate([
+    {
+        $addFields:{
+            totalMarks:{$sum:"$marks"},
+             noOfSubjects:{$size:"$marks"}
+        }
+    },
+    {
+        $addFields:{
+             precentage:{$divide:["$totalMarks","$noOfSubjects"]}
+        }
+    },
+    {
+        $addFields:{
+            grade:{
+                $cond:{
+                   if:{
+                      $gte:["$precentage",30]
+                   },
+                   then:"pass",
+                   else:"failed"
+
+            }
+            }
+        }
+    },
+    {
+        $project:{
+            marks:0,
+            noOfSubjects:0
+        }
+    }
+])
+
+// if else me kewal if else ka condition check hota hai elseif ke nhi kr pata hai tb hm switch case la use krnege
+
+- db.students.aggregate([
+    {
+        $addFields:{
+            totalMarks:{$sum:"$marks"},
+             noOfSubjects:{$size:"$marks"}
+        }
+    },
+    {
+        $addFields:{
+             precentage:{$divide:["$totalMarks","$noOfSubjects"]}
+        }
+    },
+    {
+        $addFields:{
+            grade:{
+                $switch:{
+                  branches:[
+                    {
+                        case:{$gte:["$precentage",90]},
+                        then:"A+"
+                    },
+                   {
+                        case:{$gte:["$precentage",80]},
+                        then:"A"
+                    },
+                   {
+                        case:{$gte:["$precentage",70]},
+                        then:"B"
+                    },
+                    {
+                        case:{$gte:["$precentage",60]},
+                        then:"C"
+                    },
+                  ],
+                  default:"D"
+
+            }
+            }
+        }
+    },
+    {
+        $project:{
+            marks:0,
+            noOfSubjects:0
+        }
+    }
+])

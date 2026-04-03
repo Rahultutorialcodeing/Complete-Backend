@@ -1,0 +1,24 @@
+  show collections
+1) sort() // for price range shorting, createdAt for least data
+   - first we add 20 data with createdAt like this (  {
+    "title": "Laptop Backpack",
+    "price": 1999,
+    "discount": 17,
+    "createdAt": { "$date": "2025-01-20T04:30:00.000Z" }
+  })
+  - db.products.find().sort({createdAtcreatedAt:-1}) // letest Data (-1) decending order // old data (1) ascending order
+  - db.products.find().sort({createdAtcreatedAt:-1}).limit(7)
+  - db.products.find().sort({price:-1}).limit(5)
+  - db.products.find({},{title:1,price:1}).sort({price:-1})
+
+2) skip() 
+   - db.products.find().skip(0).limit(2)
+   - db.products.find().skip(2).limit(2)
+  // skip=(pageNumber-1)*limit
+3) countDocuments({query})
+
+4) updateOne({query},{edit value}) || updateMany({query},{edit value})
+  -  db.products.updateOne({_idObjectId("696b298227287eef9e1e2622")},{$set:{title:"Wireless Mouse edit"}})
+  -  db.products.updateMany({title:"Wireless Mouse edit"},{$set:{price:"100 edit"}})
+
+5) deleteOne({query}) || deleteMany({query})

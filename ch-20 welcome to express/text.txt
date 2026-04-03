@@ -1,0 +1,3 @@
+1) welcom to express js
+=> dekho hmlogo ne av node js me api likha jisme hme smja ki node me api kaise likha jata hai but jo hmlog node me api likhte hai wo utna scalable nhi hota hai or ha jb node me api likhenge to bhut lanthey code hota hai to us kam ko aasan krne ke liye expreess js aaya hai 
+=> expreess ek framowork hai node js ka jo kam ko assan krta hai api likhte wokt

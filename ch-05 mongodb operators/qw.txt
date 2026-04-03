@@ -1,0 +1,10 @@
+How do you find all documents in a collection where the price field is exactly equal to 100?
+How do you query documents where the status field is not equal to "active"?
+How do you retrieve all documents where the age field is greater than 25?
+How do you filter documents where the score field is greater than or equal to 90?
+How do you find all records where the salary field is less than 50000?
+How do you query documents where the rating field is less than or equal to 4.5?
+How do you use the $eq operator inside an aggregation pipeline to match documents with a specific value in the category field?
+How do you write a query to find all users whose age is not equal to 30 and their status is "verified"?
+How do you retrieve products with a stock count greater than 10 but less than 50?
+How do you filter documents where the createdAt field is greater than or equal to a specific date (e.g., "2023-01-01")?

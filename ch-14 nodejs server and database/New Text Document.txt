@@ -1,0 +1,55 @@
+dekho koe v company ka backed likhoeg to us compny ka name se folder bna loge 
+
+npm init -y :- esme apka project ke configration hota hai 
+mainly esko meta data || menifest file kaha jata hai project ka
+. esme genraly 3 type ke deta rhta hai 
+1) application ke related
+2) es project ko kaise run krna hai uski jankari hoti hai
+3) es project ko kon bana rha hai author me deta hai or license me aage samjenge multiple type ke license hote hai or depeacy hota hai jisme apka third party madule dawlod krte hai uska name 
+for ex:-(npm i moment)
+
+1) why we study node js
+=> hm node js esliye padh rhe hai kyu ki hm apna cpu ko server bna ske
+taki req or res ho handle kr ske
+mtlb hme yesha node js me madad se code krenge jo proper req or res de ske
+
+httP://demo.com
+demo.com-> server ke pass ip jata hai 
+httP-> server ke pass port jata hau (80,443)
+
+dekho apne ek website banaya hai (demo.com) name se to user ne req kiya server ke pass server ne res diya user ke computer ke pass 
+
+httP://demo.com : apka website ka url es type ke hai 
+
+jis domain ke sath http ya https lga hota hai usko hmlog bolenge stateless protocol ko follow kr rha hai
+stateless protocol:- mtlb jb server se response mil jata hai user ko to fir n user server ko janta hai n server user ke computer ko janta hai mltb ki after giving respose server disconnect ho jata hai 
+
+agar connect rhta ho man lo app website open kiye hai or so gye to apka sara data khtm ho jata phone lekin yesha nhi n hota hai kyu ki jb server response de deta hai fir server disconnect ho jata 
+
+statefull protocol:- ws:// , webrtc://
+statefull protocol se app jb tk server se connect rahenge jb tk ye server chahe nhi 
+ye kb use hota chat ke smy vidio ke calling
+
+kaise kam krta hai statefull protocol 
+dekho jb user1 se hii beja to server ke pass gya or server connect rhta hai user 2 se to deta user 2 ke pass bej deta hai 
+
+mtlb aaps me dono users connect rhte hai server se statefull protocol me 
+
+dekho man lo chat app ko khol ke so gye to yeshe me mera sara data subah tk khtm n ho jayega esliye hm hm code me likhte hai ki man lo 2 minut tk cursor hila nhi to server ko disconnect kr do taki data bacha rhe
+
+
+status code ye brawor ke bta rha hai ki kaise respose server se aaya 
+200 || 201 -> success
+424 || 500 -> failed
+401 -> unauthenticated( app login nhi ho)
+404 -> not found
+409 -> duplicat(alredy exist hai ye email)
+
+
+ 
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+// interMadiate lavel momgodb
+1) what is operators in mongodb
+  => Operators wo special symbols hote hain jo MongoDB me
+👉 data ko filter, update, compare aur modify karne ke kaam aate hain.
+  => operators satrt hita hai ($) dollor symbols se
+
+2) comparision krne ke liye 
+  - $eq
+  - $ne
+  - $gt
+  - $gte
+  - $lt
+  - $lte
+
+1) $eq
+- db.products.find({price:{$eq:799}}) // ye kam bina operator ke v ho    skta hai // db.products.find({price:799}) esse
+
+2) $ne
+- db.products.find({price:{$ne:799}})
+- db.products.find({price:{$ne:799}})
+- db.products.find({price:{$ne:799}}).limit(5)
+
+3) $gt
+- db.products.find({price:{$gt:500}})
+- db.products.find({price:{$gt:500}}.limit(5))
+- db.products.find({price:{$gt:800}}).sort({price:1})
+
+// do your self 
+  - $gte
+  - $lt
+  - $lte
+
+
+- db.products.find({price:{$gte:500,$lte:800}})
+- db.products.find({price:{$gte:500,$lte:800}}).sort({price:1})
+- db.payments.find({ amount: { $gte: 600, $lte: 1000 } }).sort({ amount: 1 })
+- db.payments.find({createdAt:{$gte:ISODate("2022-07-15"),$lte:ISODate("2022-07-17")}}).sort({createdAt:1})
+     => {
+    userId: ObjectId("64f0d1c9a1b2c3d4e5f60701"),
+    amount: 999,
+    currency: "INR",
+    status: "failed",
+    createdAt: new Date("2022-07-15T14:30:00.000Z"),
+    updatedAt: new Date("2022-07-16T16:40:00.000Z")
+  }, 
+  yesha db me date hona chhiaye createdAt ka
+
+- db.payments.countDocuments({createdAt:{$gte:ISODate("2022-07-15"),$lte:ISODate("2022-07-17")}})
+- db.payments.find({createdAt:{$gte:ISODate("2022-07-15"),$lt:ISODate("2022-07-15")}}) // ek din ka deta

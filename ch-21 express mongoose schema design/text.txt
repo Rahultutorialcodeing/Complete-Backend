@@ -1,0 +1,8 @@
+schema database ka naksha degine krta hai mltb kis type ka data hmra db me store hoga validation lgata hai data me
+
+mongoose data type 
+String
+Number
+Boolean
+Date
+Enum

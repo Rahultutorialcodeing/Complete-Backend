@@ -1,0 +1,35 @@
+1) what is api
+=> API (Application Programming Interface) ek tarika hota hai jisse different software ya apps aapas me communicate karke data share karte hain.
+
+. man lo app vidio calling Application babane ka service provide krte ho
+=> to app us Application ke liye server pe don type se code kr skte ho 
+ 1) SDK -> problem ye hta hai ki agar app server ka code php ka hai to app shirf php wale client hi use kr skte hai
+ 2) API -> no matter kon sa language me code kiya gya hai sare koe use kr kste hai
+
+=> two type ka api hote hai 
+1) SOAP  API=> xml type ka deta respose deta hai 
+   => <xml>
+       <age>18</age>
+      </xml>
+2) REST API=> JSON formated me deta aata hai
+  => {
+      age:12
+     }
+
+* Rule to build Rest API
+ 1) Respose in JSON format in client machine
+ 2) status code with respose
+ 3) endpoint declaration
+ => Endpoint declaration का मतलब होता है → API का वो URL जहाँ client request भेजता है और server response देता है।
+  ex => https://api.example.com/users
+  users endpoint hai https://api.example.com ye domain
+
+  * HTTP req method
+  1) POST -> create or store data in db
+  2) GET -> read data from db
+  3) PUT  -> update data from db
+  4) PATCH  -> update data from db
+  5) DELETE -> delet data from data
+  6) OPTION -> ye endpoint ko allow krta hai ki ye endpoint kon kon sa method control krega ye default browser rhta hain 
+
+  => browser ke url se req krte hai to hmesha GET req hota or baki method profom krna hai to install kro POST man

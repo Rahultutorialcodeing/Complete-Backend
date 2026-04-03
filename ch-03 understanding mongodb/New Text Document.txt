@@ -1,0 +1,43 @@
+1) what is db throw Previous class
+2) how to store data in db
+    => i have three type of deta like users,product,pyments
+    => ye thino ko tin collection bana kr ke apna apna collection me data store kr denge doccument ({},{},{}) wise
+3) atlash pe account bnawo 
+4) mongosh shell ko dawlod kro 
+   => ip allow from anywhare kro network access me jakar ke
+
+5) all commad shell
+  1) list of all databse 
+    => show dbs
+  2) use cools_notes_app :- ye db me jane ke liye or nya db banane ke liye
+  3) exit :- root path me aane ke liye
+  4) db.courses.insertOne({
+  title:"php",
+  price:2000,
+  disCount:20,
+  })
+
+  5)  db.courses.insertMany([
+  {
+  title:"vew js",
+  price:300,
+  disCount:20,
+  },
+  {
+  title:"laravel",
+  price:200,
+  disCount:10,
+  }
+  ])
+
+  6) find({query},{projection})  || findOne({query},{projection})
+     -  db.courses.find()
+     -  db.courses.findOne()
+     -  db.courses.findOne({title:"laravel",  price:200,})
+     -  db.courses.findOne({ _id: ObjectId('69699ff339d68133201e2625')}
+     -  db.courses.find({title:"laravel",  price:200,}) // multiple data ke liye 
+     -  db.courses.findOne({title:"laravel"},{title:1,_id:0})
+     -  db.courses.find({title:"laravel"},{title:1,_id:0})
+  7) limit()
+
+

@@ -1,0 +1,69 @@
+node js 
+  |
+  |
+Js runtime environment
+ 
+
+ - threads kya hota hai?
+ => threads ek macanisam hai request ko handle krne ka
+ - request kya hota hai?
+ => jo users ke computer ke jo server pe beja jayega use request khte hai
+ ex:- website open, file dawnload, signup etc.
+
+ jo jitna request utna threads apke seerver me hona chhiaye
+
+ threads koe hardware nhi hota hai threads ek software program hota hai ko request ko handle krta hai
+
+ threads node js me present hota hai. threads request ko accept krta hai or request ke according wo users ke computer tk response deta hai
+
+------har ek request ko handle krne ke liye alag alga threads hone chhiye mtlb----
+
+user 1                             |       |
+user 2                             |server |  
+user 3                             |       |
+use 4                              |       |
+
+threads 2 type ke hote hai language me 
+1. single threads
+2. multiple threads
+
+but javaScript by default single threads language hai
+mtlb node ja ek bar me ek hi request ho handle kr payega
+
+jaise user 1 ne request kiya server ke pass to usko 4 second lga response milne me 
+
+fir user 1 ko response milne ke bad user 2 ka request jata hai or user 2 ko response milne me 4 second ka delay hota hai to tolal user 2 ko 8 second weit krna prega .
+
+same as user 3 || user 4
+
+to kya etna der koe user apke website me rukenge 
+=> to nhi , agar yesha hota to kya koe developer node js ko use krte nhi krte simple si bat hai 
+
+- es problem ko solve krne ke liye node js c++ ke language me likha gya hai c++ machin ka bhut karib ka language hai 
+
+c++
+ |
+kernal (c++ ka program hai ye)
+ |
+libuv (pakage hai c++ ka)
+
+libuv ke pass chhamta hota hai dynamic threads yani jarurat ke according threads create krne ka
+
+to ab user 1 ka request jayega to threads create hoga or threads worker ko hand over kr deta hai 
+or fir user 2 ka request jayega to to user 1 wala threads asign ho jayega user 2 ke liye or ye v worker ko task asign kr deta hai 
+
+- worker ko code proccessor smj lo jaisa request aata hai usko according response deta hai
+- worker response dene ke bad free ho jata hai worker
+
+agar ek sath multiple request jayega to dynamic threads create ho jayenge
+
+threads ka limitation hota hai genraly threads 200 se 500 tk ka threads create ho skta hai dynamic agar 500 se jyada request aaya to fir website ko scale krna prta hai 
+
+what is event loop?
+=> event loop ek macanisam hai jispe apka node js chalta hai taki wo check kre kon sa request aa rha hai kb response dena hai kb file store krna hai kr delet krna hai kb edit etna hai
+
+
+
+
+
+

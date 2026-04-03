@@ -1,0 +1,21 @@
+How can you limit the result to show only 5 documents?
+How do you sort documents in ascending order based on a field called title?
+How do you sort documents in descending order based on a field called createdAt?
+How can you skip the first 5 documents and display the next 10?
+How do you count the total number of documents in a collection?
+How can you count the number of documents where status is "active"?
+How do you update a single document where email is "test@example.com" to set verified to true?
+How do you update all documents where category is "books" by adding a new field discount with a value of 15%?
+How can you delete one document where status is "inactive"?
+How can you delete all documents where expired is true?
+How can you find the first 5 documents sorted by price in descending order?
+How can you find and display only the name and email fields for all users?
+How do you find documents where age is greater than 25?
+How do you find documents where price is between 100 and 500?
+How can you find all documents where title contain "mongodb"?
+How do you update only the lastLogin field for a user with username: "john_doe"?
+How can you remove a specific field (e.g., discount) from all documents?
+How do you find the total number of documents where rating is greater than 4.5?
+How can you update a document only if it exists, and insert a new one if it doesn’t (upsert)?
+How can you delete the oldest document based on createdAt?
+db.products.findOneAndDelete({}, { sort: { createdAt: 1 } }) //lst data delet

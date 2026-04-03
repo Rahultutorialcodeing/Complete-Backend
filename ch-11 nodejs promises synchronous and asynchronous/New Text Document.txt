@@ -1,0 +1,30 @@
+1) what is node js
+=> node js is a javaScript runtime enviroment use to perform server operations
+=> runtime enviroment ka mtlb javaScript ko server pe run krne me help krta hai 
+
+ ---js which use in brawsor node run in node js---
+ window.alert()
+ document.write()
+ console.log() -> ye node js me use ho skta hai kyu ki ye brawsor pe run nhi krta hota hai 
+
+ - mtlb jo chije DOM || BOM js me hai wo shirf node js me use nhi hota baki sb use hota hai kyu ki DOM || BOM brawsor ka part hai
+- install node js kyu ki node js javaScript ka code ko compile krta hai inpreate krta hai 
+- dekho ab hme apna computer ko server bnana prega jo http request ko accept krega 
+  - when install node js 
+    - http request accept krega
+    - javaScript runtime enviroment
+    - node js me V8 Engine hota hai
+    - V8 Engine JavaScript ko machine code me convert karta hai
+To interpreter fir kya karta hai?
+    - interpreter - code ko line by line exicute krta hai
+
+- node -v
+
+- javaScript default behavious syncronius  hai
+- line by line code excute ho rha hai to wo syncronius behavious hota hai 
+- but bich me kisi ke wait krana ho to js ko hme asyncronius bana prta hai
+- setTimeout, setInterval ye dono asyncronius me aate hai
+- apko pta hai ki setTimeout, setInterval asyncronius hai ye to javaScript khud se bna ke diya hai but apko bnana hai to Promise ka use hm krnege
+
+
+

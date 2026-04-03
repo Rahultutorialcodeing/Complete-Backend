@@ -1,0 +1,136 @@
+1) first we inset data like this
+    -  {
+          "name": "Men Cotton T-Shirt",
+          "slug": "men-cotton-tshirt",
+          "price": 799,
+          "colors": ["Black", "White", "Blue", "Red", "Grey", "Green"],
+          "stock": 120,
+          "category": "Clothing",
+          "createdAt": { "$date": "2025-01-01T10:00:00.000Z" }
+       }
+
+- Array pe kam krne wale operators
+     1) $slice 
+
+    -  db.products2.find({},{colors:1})
+    -  db.products2.find({},{colors:{$slice:1},_id:0})
+    -  db.products2.find({},{colors:{$slice:2},_id:0})
+    -  db.products2.find({},{colors:{$slice:-1},_id:0}) //last ka colors
+    -  db.products2.find({},{colors:{$slice:[1,3]},_id:0}) // index 1 se 3 ka data aayega
+
+     2) $in // ye qaury me hi likhata hai in operator
+
+     - db.products2.find({colors:{$in:["Black"]}}) // ye jitna v colors me Black hoga to wo data dega  
+     - db.products2.find({colors:{$in:["Black", "Red]}}) // koe ek color match krega to data dega // ye or || operator jaise kam krta hai
+     - 
+        
+    3) $all // ye qaury me hi likhata hai in operator
+
+    - db.products2.find({colors:{$all:["Black","Gold"]}}) // ye sara color match krega to wo data dega // ye and && operator jaise kam krta hai 
+
+
+    - Advace use of $in 
+
+    - db.products2.updateMany({_id:{$in:[ ObjectId('6981a863479f773ae31e2649'), ObjectId('6981a863479f773ae31e264b')]}},{$set:{category:"utilities"}}) 
+
+    // ye multiple uniq id ko update krega 
+
+    4) $push // colors me deta update krna hai // but push same data v add allow krta hai 
+     
+     - db.products2.update({_id:ObjectId("6981a863479f773ae31e2649")},{$push:{colors:"Cyan"}}) // single data push
+     - db.products2.update({_id:ObjectId("6981a863479f773ae31e2649")},{$push:{colors: {$each:["Gray","Pila"]}}}) // multiple data adding
+
+    5) $addToSet // colors me deta update krna hai // but addToSet same data v add allow nhi krta hai 
+     
+     - db.products2.update({_id:ObjectId("6981a863479f773ae31e264a")},{$addToSet:{colors:"Cyan"}}) // single data a
+     - db.products2.update({_id:ObjectId("6981a863479f773ae31e264a")},{$addToSet:{colors: {$each:["Cyan","Pila"]}}}) // multiple data adding
+
+    6) $position // adding deta with index
+     
+      - db.products2.updateOne({_id:ObjectId("6981a863479f773ae31e264a")},{
+        $push:{
+            colors:{
+                $each:["Rahul"],
+                $position:1
+            }
+        }
+      })
+
+      - db.products2.updateOne({_id:ObjectId("6981a863479f773ae31e264a")},{
+        $push:{
+            colors:{
+                $each:["Sonu","Pawan"],
+                $sort:1
+            }
+        }
+      })
+      // name ko accending arder me add krna hai sort
+
+    7) $pop
+    - db.products2.updateOne({_id:ObjectId("6981a863479f773ae31e264a")},{
+        $pop:{
+            colors:-1
+        }
+    })
+    // 1 last ka deta delet krega -1 suru ka deta delet krega
+
+    8) $pull // khi se single deta delet kr skte hoga
+    db.products2.updateOne({_id:ObjectId("6981a863479f773ae31e264a")},{
+        $pull:{
+            colors:"Pila"
+        }
+    })
+
+    8) $pullAll // multiple deta delet kr skte hoga
+    db.products2.updateOne({_id:ObjectId("6981a863479f773ae31e264a")},{
+        $pullAll:{
+            colors:["Lavender","Pawan"]
+        }
+    })
+
+    // Advace now we stude Array in Objects 
+     [{},{},{},{}]
+
+    - must add data like this
+    {
+    "name": "Wireless Keyboard",
+    "category": "Electronics",
+    "price": 29.99,
+    "stock": 50,
+    "createdAt": { "$date": "2024-03-07T12:00:00Z" },
+    "updatedAt": { "$date": "2024-03-07T12:30:00Z" },
+    "tags": ["wireless", "keyboard", "usb"],
+    "variants": [
+      { "color": "Black", "price": 29.99, "stock": 20 },
+      { "color": "White", "price": 31.99, "stock": 30 }
+    ]
+  },
+
+  1) $elemMatch
+   
+    - db.products3.find({
+        variants:{
+            $elemMatch:{
+                price:31.99
+            }
+        }
+    })
+    - db.products3.find({
+        variants:{
+            $elemMatch:{
+                price:{
+                    $gte:30, $lte:50
+                }
+            }
+        }
+    })
+
+  2) $slice
+    - db.products3.find({},{variants:{$slice:1}}) 
+    - db.products3.updateOne({_id:ObjectId("6981bc0f479f773ae31e265d")},{$push:{
+        variants:{
+            color:"Hello",price:60,stock:20
+        }
+    }})
+
+    // app sare operator jo pde hai to yaha pe v use kr skte hai
