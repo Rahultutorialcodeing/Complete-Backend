@@ -1,4 +1,5 @@
-1) welcom to workshop
+=> good morning student welcom to workshop
+  => odinary course or worshop me kya antar hai odinary course me app step by step sikhte ho phle a fir b fir c yeshe step by step sikhte ho odinary course aur  odinary course krne kme bad app project bna skte ho but worshop krne ke bad app product bna skte ho 
 2) product vs project
    - product we learn in workshop vs project will learn in ordenary courses
    
