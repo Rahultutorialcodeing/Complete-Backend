@@ -12,6 +12,7 @@
     => which type of text store inside db 
 
 4) Undersatnd about scalling
+=> CPU ke chhamta ko badana scalling kahlata hai 
    => 2 types of scalling 
    1) horizontal scalling
    2) vertical scalling
