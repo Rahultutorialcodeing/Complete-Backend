@@ -7,7 +7,7 @@
      * Project
      => ye code likha to animation ban gya ye likha to  crud opr ban gya ye sb project me ginate hai.
      => Project kaha run hota hai wo apke PC  pe run hota hai.
-    =>PC->RAM hoga, HD (Hard Disk) hoga , Proceesor hoga
+    apka pc me->RAM hoga, HD (Hard Disk) hoga , Proceesor hoga to maily ye apke system pe chalta hai to koe dikat nhi hoti hai web app high speed me chalti hai
 
     * Product
     => Production meanly users ke dyan me rakh ke banate ho
